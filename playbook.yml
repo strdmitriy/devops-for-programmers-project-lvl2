@@ -10,3 +10,15 @@
     - name: Install Docker Module for Python
       ansible.builtin.pip:
         name: docker
+
+- name: Deploy application
+  hosts: all
+  gather_facts: yes
+  remote_user: root
+  tasks:
+    - name: Run container
+      community.docker.docker_container:
+        name: Redmine
+        image: redmine
+        published_ports:
+          - 3000:3000
