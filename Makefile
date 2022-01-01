@@ -9,3 +9,6 @@ encrypt-vault:
 
 decrypt-vault:
 	ansible-vault decrypt $(FILE) --vault-password-file vault-password
+
+touch-vault-password-file:
+	touch vault-password

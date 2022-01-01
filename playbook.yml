@@ -29,3 +29,24 @@
         published_ports:
           - 3000:3000
         env_file: '.env'
+
+- name: Datadog
+  hosts: all
+  gather_facts: yes
+  remote_user: root
+  vars_files:
+    - "./group_vars/webservers/vars.yml"
+  vars:
+    app_port: "3000"
+    datadog_api_key: '{{ datadog_api_key }}'
+    datadog_site: "datadoghq.com"
+    datadog_checks:
+      http_check:
+        init_config:
+        instances:
+          - name: Application health check status
+            url: "http://devops-and1.club:{{ app_port }}"
+            timeout: 5
+            method: GET
+  roles:
+    - { role: datadog.datadog, become: yes }
