@@ -27,8 +27,3 @@
         published_ports:
           - 3000:3000
         env_file: '.env'
-
-- name: Datadog http check
-  hosts: all
-  roles:
-    - { role: datadog.datadog, become: yes }
