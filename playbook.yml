@@ -30,7 +30,5 @@
 
 - name: Datadog http check
   hosts: all
-  become: yes
-  remote_user: root
   roles:
     - { role: datadog.datadog, become: yes }
