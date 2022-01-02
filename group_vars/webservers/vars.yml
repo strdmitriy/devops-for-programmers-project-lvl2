@@ -13,6 +13,6 @@ datadog_checks:
     init_config:
     instances:
       - name: Application health check status
-        url: "http://devops-and1.club:{{ app_port }}"
+        url: "http://{{ ansible_facts['default_ipv4']['address'] }}:{{ app_port }}"
         timeout: 5
         method: GET
