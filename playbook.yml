@@ -27,3 +27,9 @@
         published_ports:
           - 3000:3000
         env_file: '.env'
+
+- hosts: all
+  gather_facts: yes
+  remote_user: root
+  roles:
+    - name: datadog.datadog
