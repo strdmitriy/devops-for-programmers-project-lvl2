@@ -13,6 +13,6 @@ datadog_checks:
     init_config:
     instances:
       - name: Application health check status
-        url: http://devops-and1.club:3000
+        url: http://devops-and1.club:80
         timeout: 5
         method: GET
