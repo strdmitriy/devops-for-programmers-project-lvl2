@@ -28,8 +28,7 @@
           - 3000:3000
         env_file: '.env'
 
-- hosts: all
-  gather_facts: yes
-  remote_user: root
+- name: Datadog http check
+  hosts: webservers
   roles:
-    - name: datadog.datadog
+    - { role: datadog.datadog, become: yes }
