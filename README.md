@@ -10,9 +10,9 @@ Project based redmine app
 ## Required
 - make deploy - run deployment redmine image
 - make install - install ansible galaxy collection
-- encrypt-vault - encrypt vault variables
-- decrypt-vault - decrypt vault variables
-- touch-vault-password-file - create vault-password file
+- make encrypt-vault - encrypt vault variables
+- make decrypt-vault - decrypt vault variables
+- make touch-vault-password-file - create vault-password file
 
 ## Configuration
 Install ansible galaxy collections and role
