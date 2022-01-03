@@ -4,13 +4,3 @@ redmine_db_port: "{{ REDMINE_DB_PORT }}"
 redmine_db_database: "{{ REDMINE_DB_DATABASE }}"
 redmine_db_postgres: "{{ REDMINE_DB_POSTGRES }}"
 datadog_api_key: "{{ DATADOG_API_KEY }}"
-
-datadog_site: "datadoghq.com"
-datadog_checks:
-  http_check:
-    init_config:
-    instances:
-      - name: Application health check status
-        url: http://devops-and1.club:3000
-        timeout: 5
-        method: GET
