@@ -25,11 +25,11 @@
         image: redmine
         restart_policy: always
         published_ports:
-          - "{{ app_port }}:3000"
+          - "{{ redmine_app_port }}:3000"
         env_file: '.env'
 
 - name: Datadog http check
   hosts: webservers
   remote_user: root
   roles:
-    - { role: datadog.datadog }
+    - role: datadog.datadog
